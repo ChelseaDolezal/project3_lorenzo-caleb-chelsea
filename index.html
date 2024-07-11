@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Citi Bike</title>
+  <title>US Traffic Accident Analysis</title>
 
   <!-- D3 -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
 
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 
   <!-- Leaflet JavaScript code -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <!-- Plotly JavaScript code -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
@@ -23,7 +22,16 @@
 <body>
 
   <!-- The div that holds our map -->
-  <div id="map-id"></div>
+  <div id="map"></div>
+  <div id="plot"></div>
+  <div id="severity"></div>
+  <div id="plethoral"></div>
+  <div id="temperature"></div>
+  <div id="visibility"></div>
+  <div id="weather_conditions"></div>
+  <div id="wind_speed"></div>
+  <div id="day_of_week"></div>
+  <div id="time_of_day"></div>
 
   <!-- Our JavaScript file -->
   <script type="text/javascript" src="static/js/logic.js"></script>
