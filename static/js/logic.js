@@ -13,16 +13,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 fetch('http://localhost:5000/api/accidents')
   .then(response => response.json())
   .then(data => {
-      // Log the data to the console for verification
-      console.log(data);
-
-      // Check if data is loaded correctly
-      if (data.length > 0) {
-          console.log("Data loaded successfully!");
-      } else {
-          console.error("No data loaded.");
-      }
-
       // Convert data to GeoJSON format
       let geoData = {
           type: 'FeatureCollection',
@@ -33,38 +23,36 @@ fetch('http://localhost:5000/api/accidents')
                   coordinates: [parseFloat(d.Longitude), parseFloat(d.Latitude)]
               },
               properties: {
-                  severity: d.Severity,
-                  date: d.Start_Time,
-                  city: d.City,
                   state: d.State,
-                  description: d.Description,
-                  temperature: d.Temperature,
-                  visibility: d.Visibility,
-                  weather: d.Weather_Condition,
-                  wind_speed: d.Wind_Speed,
-                  day_of_week: new Date(d.Start_Time).getDay(),
-                  time_of_day: new Date(d.Start_Time).getHours()
+                  stateName: d.StateName,
+                  caseID: d.CaseID,
+                  pedestrians: d.Pedestrians,
+                  personsNotInMotorVehicle: d.PersonsNotInMotorVehicle,
+                  totalVehicles: d.TotalVehicles,
+                  vehicleForms: d.VehicleForms,
+                  personsInvolved: d.PersonsInvolved,
+                  personsKilled: d.PersonsKilled,
+                  city: d.City,
+                  cityName: d.CityName,
+                  month: d.Month,
+                  monthName: d.MonthName,
+                  day: d.Day,
+                  dayName: d.DayName,
+                  dayOfWeek: d.DayOfWeek,
+                  dayOfWeekName: d.DayOfWeekName,
+                  year: d.Year,
+                  hour: d.Hour,
+                  hourName: d.HourName,
+                  minute: d.Minute,
+                  minuteName: d.MinuteName,
+                  latitude: d.Latitude,
+                  longitude: d.Longitude,
+                  harmfulEvent: d.HarmfulEvent,
+                  harmfulEventName: d.HarmfulEventName,
+                  weather: d.Weather,
+                  weatherName: d.WeatherName,
+                  fatalities: d.Fatalities
               }
           }))
       };
 
-      // Create a layer for the points
-      let markers = L.markerClusterGroup();
-
-      // Loop through a subset of the data to add markers (for example, the first 10 data points)
-      geoData.features.slice(0, 10).forEach(feature => {
-          let coords = feature.geometry.coordinates;
-          let properties = feature.properties;
-
-          if (coords[0] && coords[1]) {
-              let marker = L.marker([coords[1], coords[0]])
-                  .bindPopup(`<h3>${properties.city}, ${properties.state}</h3><hr><p>${properties.description}</p><p>Severity: ${properties.severity}</p><p>Temperature: ${properties.temperature}°F</p><p>Visibility: ${properties.visibility} miles</p><p>Weather: ${properties.weather}</p><p>Wind Speed: ${properties.wind_speed} mph</p>`);
-              markers.addLayer(marker);
-          }
-      });
-
-      myMap.addLayer(markers);
-  })
-  .catch(error => {
-      console.error('Error loading data:', error);
-  });
