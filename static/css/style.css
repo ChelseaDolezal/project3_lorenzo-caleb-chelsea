@@ -3,15 +3,11 @@ body {
   margin: 0;
 }
 
-#map, #plot, #severity, #plethoral, #temperature, #visibility, #weather_conditions, #wind_speed, #day_of_week, #time_of_day {
+#map, #state-map {
   width: 100%;
   height: 50vh;
 }
 
 .leaflet-popup-content {
   text-align: center;
-}
-
-#map {
-  height: 100%;
 }

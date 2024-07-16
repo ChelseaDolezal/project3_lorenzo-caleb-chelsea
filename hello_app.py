@@ -1,10 +1,13 @@
-from flask import Flask,  jsonify
+from flask import Flask, jsonify
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 
-app =Flask(__name__)
-CORS(app) 
+app = Flask(__name__)
 
+# Enable CORS for a specific domain
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:8000"}})
+
+# Configure MongoDB connection
 app.config["MONGO_URI"] = "mongodb://localhost:27017/traffic_accidents"
 mongo = PyMongo(app)
 
@@ -49,7 +52,9 @@ def get_accidents():
             'Fatalities': accident.get('FATALS')
         }
         accidents_list.append(accident_data)
-    return jsonify(accidents_list)
+    response = jsonify(accidents_list)
+    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:8000')
+    return response
 
 if __name__ == '__main__':
-    app.run(debug=True, port = 7000)
+    app.run(debug=True, port=9000)
