@@ -20,10 +20,20 @@
   <!-- Chart.js JavaScript -->chelsea added
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+  <!-- Leaflet marker cluster JavaScript code -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.0.6/dist/leaflet.markercluster.js"></script>
+
+  <!-- Leaflet heatmap JavaScript code -->
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/overlaystyle.css">
 </head>
 <body>
+
+  <h2>US Fatal Traffic Accident Overlay Map</h2>
+  <div id="map" style="height: 600px;"></div>
 
   <!-- The div that holds our map -->
   <div id="map" style="height: 500px;"></div>//chelsea added "style="height: 500px;""
@@ -37,23 +47,24 @@
   <div id="day_of_week"></div>
   <div id="time_of_day"></div>
 
-  <!-- SVG for Chart.js line chart -->///chelsea added
+  <!-- SVG for Chart.js line chart -->
   <div id="chartContainer" style="width: 80%; margin: 20px auto;">
     <canvas id="accidentChart"></canvas>
   </div>
 
- <!-- Chart.js bar chart for hourly accidents -->///chelsea added
+ <!-- Chart.js bar chart for hourly accidents -->
  <div id="hourlyChartContainer" style="width: 80%; margin: 20px auto;">
   <canvas id="hourlyAccidentChart"></canvas>
 </div>
 
-<!-- Chart.js bar chart for daily accidents -->///chelsea added 
+<!-- Chart.js bar chart for daily accidents -->
 <div id="dailyChartContainer" style="width: 80%; margin: 20px auto;">
   <canvas id="dailyAccidentChart"></canvas>
 </div>
 
   <!-- Our JavaScript file -->
   <script type="text/javascript" src="static/js/barandlineGraphlogic.js"></script>//chelsea added name of js
+  <script type="text/javascript" src="../static/js/overlaylogic.js"></script>
 </body>
-
 </html>
+
