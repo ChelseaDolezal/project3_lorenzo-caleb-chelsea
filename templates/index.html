@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">//chelseaadded
   <title>US Traffic Accident Analysis</title>
 
   <!-- D3 -->
@@ -16,13 +17,16 @@
   <!-- Plotly JavaScript code -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+  <!-- Chart.js JavaScript -->chelsea added
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 <body>
 
   <!-- The div that holds our map -->
-  <div id="map"></div>
+  <div id="map" style="height: 500px;"></div>//chelsea added "style="height: 500px;""
   <div id="plot"></div>
   <div id="severity"></div>
   <div id="choropleth"></div>
@@ -32,6 +36,21 @@
   <div id="wind_speed"></div>
   <div id="day_of_week"></div>
   <div id="time_of_day"></div>
+
+  <!-- SVG for Chart.js line chart -->///chelsea added
+  <div id="chartContainer" style="width: 80%; margin: 20px auto;">
+    <canvas id="accidentChart"></canvas>
+  </div>
+
+ <!-- Chart.js bar chart for hourly accidents -->///chelsea added
+ <div id="hourlyChartContainer" style="width: 80%; margin: 20px auto;">
+  <canvas id="hourlyAccidentChart"></canvas>
+</div>
+
+<!-- Chart.js bar chart for daily accidents -->///chelsea added 
+<div id="dailyChartContainer" style="width: 80%; margin: 20px auto;">
+  <canvas id="dailyAccidentChart"></canvas>
+</div>
 
   <!-- Our JavaScript file -->
   <script type="text/javascript" src="static/js/logic.js"></script>
