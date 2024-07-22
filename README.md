@@ -1,16 +1,11 @@
-# project3_lorenzo-caleb-chelsea
-project 3-visualization route 
+  In this analysis we used data from the National Highway Traffic Safety Administration (NHTSA), specifically the Fatality Analysis Reporting System (FARS) for the year 2022. We examined variables such as time, location, and day of the week. We set out to answer what times of day are crashes most prevalent, which state has a higher rate of fatal car crashes, does weather impact fatal accidents in the US and other correlations we may find interesting. 
+  When it comes to privacy, The NHSA anonymizes and aggregates personal data of individuals involved in crashes, ensuring privacy and confidentiality. The NHSA fosters transparency by providing documentation on their data collection methodologies and sources, enabling publicly accessible data to support databases, policymakers, and researchers. We ensured not to use sensitive data in the analysis to mitigate the risk of bias and ensure a fair analysis.
+  Instructions on how to use and interact with the project:
+To run our data open 2 terminals at the folder labled project3_lorenzo-caleb-chelsea. The two commands you'll always want to run in terminal (in the project folder) for you to connect to the server and api:
+  In the first open terminal type “python hello_app.py  “ this runs flask server to enable navigation to API endpoint (to access this data in JSON format type in this URL in your browser: http://localhost:9000/api/accidents)
+  In the second open terminal type “python -m http.server 8000 ”  This serves html file using local server that contains CSS and JS files (to view, type this URL in your browser: http://localhost:8000/templates/)
+Resources:
+https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/2022/
 
-Car Crash Analysis in the US (2022) -- Project Proposal
 
-In this project we will take a look at fatal car crashes in the U.S. for the year 2022 using the following dataset https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/2022/
-
-We want to answer: What times of day are these crashes most prevalent; which states and/or cities have a higher rates of fatal car crashes; how do environmental conditions (weather, lighting, visibility etc.) impact rates of fatal accidents in the US; as well as investigate any other correlations we may uncover through our analysis of the data. 
-
-Potential visualizations: 
-- An interactive map with a drop down menu that enables the user to select a major city to focus on, thus enabling them to see locations of car crashes. Additionally, the user could click on an accident pin and trigger popups that could provide additional information about the crash, such as the time of day and number of fatalities.
-- An accident heatmap that visualizes areas with higher frequencies of car accidents
-- Time-based Analysis: Line charts displaying accident trends over time
-- A choropleth (on a national, state, or county level) to visualize and compare accident rates across different geographical locations. 
-- More generally, an interactive dashboard that combines a combo of the above.
 
