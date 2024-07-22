@@ -1,5 +1,5 @@
 // Create the map object
-let myMap = L.map("map", {
+let myMap2 = L.map("map2", {
   center: [37.5, -95], // Sets the initial center of the map (latitude, longitude)
   zoom: 4 // Sets the initial zoom level of the map
 });
@@ -7,7 +7,7 @@ let myMap = L.map("map", {
 // Add the tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(myMap); // Adds the tile layer to the map
+}).addTo(myMap2); // Adds the tile layer to the map
 
 // Load the data from the Flask API routes
 let statePromise = d3.json('http://localhost:9000/api/states')
@@ -81,7 +81,7 @@ Promise.all([statePromise, populationPromise])
         weight: 0.5,
         fillOpacity: 0.7
       }
-  }).addTo(myMap);
+  }).addTo(myMap2);
 
   // Console logging colors and step limits 
   let colors = geoJson.options.colors;
@@ -109,7 +109,7 @@ Promise.all([statePromise, populationPromise])
   };
 
   // Adding the legend to the map
-  legend.addTo(myMap);
+  legend.addTo(myMap2);
 
 }); 
 
