@@ -10,7 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap); // Adds the tile layer to the map
 
 // Load the data from the Flask API
-fetch('http://localhost:7000/api/accidents')
+fetch('http://localhost:9000/api/accidents')
   .then(response => response.json())
   .then(data => {
       // Convert data to GeoJSON format
@@ -55,4 +55,5 @@ fetch('http://localhost:7000/api/accidents')
               }
           }))
       };
+    })
 

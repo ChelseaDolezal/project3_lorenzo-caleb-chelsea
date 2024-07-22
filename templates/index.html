@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">//chelseaadded
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>US Traffic Accident Analysis</title>
 
   <!-- D3 -->
@@ -26,9 +26,13 @@
   <!-- Leaflet heatmap JavaScript code -->
   <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 
+  <!-- Choropleth leaflet plugin JavaScript-->
+  <script src= "../static/js/choropleth.js"></script>
+
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
   <link rel="stylesheet" type="text/css" href="../static/css/overlaystyle.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/choroplethstyle.css">
 </head>
 <body>
 
@@ -62,9 +66,11 @@
   <canvas id="dailyAccidentChart"></canvas>
 </div>
 
-  <!-- Our JavaScript file -->
+  <!-- Our JavaScript files -->
   <script type="text/javascript" src="static/js/barandlineGraphlogic.js"></script>
   <script type="text/javascript" src="../static/js/overlaylogic.js"></script>
+  <script type="text/javascript" src="../static/js/us-states.js"></script>
+  <script type="text/javascript" src="../static/js/choropleth-logic.js"></script>
 </body>
 </html>
 
