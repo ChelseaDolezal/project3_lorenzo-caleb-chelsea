@@ -102,13 +102,14 @@ fetch('http://localhost:9000/api/accidents')
       "Circle Markers": circleMarkers
     }, null, { collapsed: false }).addTo(myMap);
 
-    // Create and add a legend for the heatmap
+    // Create and add a legend for the Circle Marker Map
     let gradientLegend = L.control({ position: 'bottomright' });
     gradientLegend.onAdd = function (map) {
-      let div = L.DomUtil.create('div', 'info legend');
-      let grades = [0, 1, 2, 3, 4, 11, 21, 31, 41];
-      let labels = [];
-      let from, to;
+    let div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML = '<h4>Circle Marker Legend</h4>';
+    let grades = [0, 1, 2, 3, 4, 11, 21, 31, 41];
+    let labels = [];
+    let from, to;
     
       // Set legend ranges
       for (let i = 0; i < grades.length; i++) {
