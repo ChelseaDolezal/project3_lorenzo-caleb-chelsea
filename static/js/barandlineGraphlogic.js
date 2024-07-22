@@ -1,14 +1,3 @@
-// Create the map object
-let myMap = L.map("map", {
-  center: [37.5, -95],
-  zoom: 4
-});
-
-// Add the tile layer for visual rep
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(myMap);
-
 // Load the data from the Flask API
 fetch('http://localhost:9000/api/accidents')
   .then(response => response.json())
