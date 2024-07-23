@@ -14,5 +14,6 @@ https://docs.google.com/presentation/d/1Ow60k1MvdXkYQT_4HWOxaBpx-fne5jDbOHeKmdBG
   It can be accessed via API with the following link: https://api.census.gov/data/2022/acs/acs1?get=group(B01003)&ucgid=pseudo(0100000US$0400000) 
   Normal weblink to table: https://data.census.gov/table/ACSDT1Y2022.B01003?q=United%20States&t=Population%20Total:Populations%20and%20People&g=010XX00US,$0400000,$04000S0_040XX00US01,02,55&y=2022&moe=false&tp=true
 
-
-
+State borders geoJSON data from Leaflet 
+https://leafletjs.com/examples/choropleth/us-states.js (direct link to data)
+https://leafletjs.com/examples/choropleth/ (link to page, data can be found under the "Data Source" header)
