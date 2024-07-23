@@ -61,7 +61,7 @@ def get_accidents():
 def get_states():
     group_query = {"$group": {
         "_id": "$STATENAME",
-        "PersonsKilled": {"$sum": "$PERMVIT"},
+        "PersonsKilled": {"$sum": "$FATALS"},
         "TotalVehicles": {"$sum": "$VE_TOTAL"},
         "CarAccidents":  {"$sum": 1}
     }}
