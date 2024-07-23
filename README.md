@@ -7,6 +7,8 @@ To run our data open 2 terminals at the folder labled project3_lorenzo-caleb-che
 
 Resources:
 https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/2022/
+Link to PowerPoint:
+https://docs.google.com/presentation/d/1Ow60k1MvdXkYQT_4HWOxaBpx-fne5jDbOHeKmdBG7yQ/edit#slide=id.gc6f980f91_0_33
 
 2022 state population estimate data is adapted from the Census (American Community Survey) data: 
   It can be accessed via API with the following link: https://api.census.gov/data/2022/acs/acs1?get=group(B01003)&ucgid=pseudo(0100000US$0400000) 
