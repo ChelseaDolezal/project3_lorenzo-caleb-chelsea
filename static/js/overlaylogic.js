@@ -79,19 +79,20 @@ fetch('http://localhost:9000/api/accidents')
 
       // Create location marker with detailed info popup
       let marker = L.marker([coords[1], coords[0]])
-        .bindPopup(`<h3>${properties.cityName}, ${properties.stateName}</h3><hr><p>Case ID: ${properties.caseID}</p><p>Pedestrians: ${properties.pedestrians}</p><p>Persons Not In Motor Vehicle: ${properties.personsNotInMotorVehicle}</p><p>Total Vehicles: ${properties.totalVehicles}</p><p>Persons Involved: ${properties.personsInvolved}</p><p>Persons Killed: ${properties.personsKilled}</p><p>Harmful Event: ${properties.harmfulEventName}</p><p>Weather: ${properties.weatherName}</p>`);
+        .bindPopup(`<h3>${properties.cityName}, ${properties.stateName}</h3><hr><p>Case ID: ${properties.caseID}</p><p>Pedestrians: ${properties.pedestrians}</p><p>Persons Not In Motor Vehicle: ${properties.personsNotInMotorVehicle}</p><p>Total Vehicles: ${properties.totalVehicles}</p><p>Persons Involved: ${properties.personsInvolved}</p><p>Harmful Event: ${properties.harmfulEventName}</p><p>Weather: ${properties.weatherName}</p><p>Fatalities: ${properties.fatalities}</p>`);
       markers.addLayer(marker);
 
       // Add coordinates to heatmap
       heat.addLatLng([coords[1], coords[0], properties.personsKilled]);
 
-      // Create circle marker with color based on number of persons killed
+      console.log (properties);
+      // Create circle marker with color based on number of fatalities
       let circleMarker = L.circle([coords[1], coords[0]], {
-        color: getColor(properties.personsKilled),
-        fillColor: getColor(properties.personsKilled),
+        color: getColor(properties.fatalities),
+        fillColor: getColor(properties.fatalities),
         fillOpacity: 0.75,
-        radius: properties.personsKilled * 1000 // Radius proportional to number of persons killed
-      }).bindPopup(`<h3>${properties.cityName}, ${properties.stateName}</h3><hr><p>Persons Killed: ${properties.personsKilled}</p>`);
+        radius: properties.fatalities * 1000 // Radius proportional to number of fatalities
+      }).bindPopup(`<h3>${properties.cityName}, ${properties.stateName}</h3><hr></p><p>Fatalities: ${properties.fatalities}</p>`);
       circleMarkers.addLayer(circleMarker);
     });
 
@@ -107,7 +108,7 @@ fetch('http://localhost:9000/api/accidents')
     gradientLegend.onAdd = function (map) {
     let div = L.DomUtil.create('div', 'info legend');
     div.innerHTML = '<h4>Circle Marker Legend</h4>';
-    let grades = [0, 1, 2, 3, 4, 11, 21, 31, 41];
+    let grades = [0, 1, 2, 3, 4, 7, 9];
     let labels = [];
     let from, to;
     
@@ -122,7 +123,7 @@ fetch('http://localhost:9000/api/accidents')
             labels.push('<i style="background:' + getColor(from) + '"></i> ' + from + '-' + to);
           }
         } else {
-          // Last range print as 41+
+          // Last range print as 9+
           labels.push('<i style="background:' + getColor(from) + '"></i> ' + from + '+');
         }
       }
@@ -135,20 +136,14 @@ fetch('http://localhost:9000/api/accidents')
 
 // Function to get color based on value
 function getColor(d) {
-  return d > 40 ? 'crimson' :      
-         d > 30 ? 'red' :    
-         d > 20 ? 'darkorange' :         
-         d > 10 ? 'orange' :  
-         d > 5 ? 'gold' :   
-         d > 3 ? 'deepSkyBlue' :     
-         d > 2 ? 'aqua' :
-         d > 1 ? 'lime' :      
+  return d > 8 ? 'crimson' :  
+         d > 6 ? 'red' :   
+         d > 3 ? 'orange' :     
+         d > 2 ? 'gold' :
+         d > 1 ? 'deepSkyBlue' :      
          d > 0 ? 'lightgreen' :     
                  'gainsboro'; // Default color
 }
-
-
-
 
 
 
