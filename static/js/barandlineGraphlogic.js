@@ -63,7 +63,7 @@ fetch('http://localhost:9000/api/accidents')
                   'September', 'October', 'November', 'December'
               ],
               datasets: [{
-                  label: 'Number of Accidents by',
+                  label: 'Number of Accidents',
                   data: accidentCounts,
                   borderColor: 'blue',
                   backgroundColor: 'lightblue',
@@ -173,7 +173,7 @@ fetch('http://localhost:9000/api/accidents')
                   'Thursday', 'Friday', 'Saturday'
               ],
               datasets: [{
-                  label: 'Accidents for each day of the week',
+                  label: 'Accidents by Day of the Week',
                   data: dailyCounts,
                   backgroundColor: 'green',
                   borderColor: 'darkgreen',

@@ -4,6 +4,7 @@
 To run our data open 2 terminals at the folder labled project3_lorenzo-caleb-chelsea. The two commands you'll always want to run in terminal (in the project folder) for you to connect to the server and api:
   In the first open terminal type “python hello_app.py  “ this runs flask server to enable navigation to API endpoint (to access this data in JSON format type in this URL in your browser: http://localhost:9000/api/accidents)
   In the second open terminal type “python -m http.server 8000 ”  This serves html file using local server that contains CSS and JS files (to view, type this URL in your browser: http://localhost:8000/templates/)
+
 Resources:
 https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/2022/
 

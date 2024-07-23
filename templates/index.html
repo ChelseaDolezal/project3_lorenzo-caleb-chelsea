@@ -36,12 +36,12 @@
 </head>
 <body>
 
-  <h2>US Fatal Traffic Accident Overlay Map</h2>
-  <div id="map" style="height: 600px;"></div>
+  <h2>U.S. Fatal Traffic Accidents Overlay Map</h2>
+  <div id="map" style="width: 80%; margin: 20px auto; height: 600px; border: thin solid black"></div>
 
   <!-- The div that holds our map -->
   <h2>Fatal Traffic Accidents by State, per 100,000 Residents</h2>
-  <div id="map2" style="height: 600px; border: medium solid black;"></div>
+  <div id="map2" style="width: 80%; margin: 20px auto; height: 600px; border: thin solid black;"></div>
   <div id="plot"></div>
   <div id="severity"></div>
   <div id="choropleth"></div>
@@ -53,17 +53,18 @@
   <div id="time_of_day"></div>
 
   <!-- SVG for Chart.js line chart -->
-  <div id="chartContainer" style="width: 80%; margin: 20px auto;">
+  <h2>Plots of Fatal Car Accident Trends</h2>
+  <div id="chartContainer" style="width: 80%; margin: 20px auto; border: thin solid black">
     <canvas id="accidentChart"></canvas>
   </div>
 
  <!-- Chart.js bar chart for hourly accidents -->
- <div id="hourlyChartContainer" style="width: 80%; margin: 20px auto;">
+ <div id="hourlyChartContainer" style="width: 80%; margin: 20px auto; border: thin solid black">
   <canvas id="hourlyAccidentChart"></canvas>
 </div>
 
 <!-- Chart.js bar chart for daily accidents -->
-<div id="dailyChartContainer" style="width: 80%; margin: 20px auto;">
+<div id="dailyChartContainer" style="width: 80%; margin: 20px auto; border: thin solid black">
   <canvas id="dailyAccidentChart"></canvas>
 </div>
 
